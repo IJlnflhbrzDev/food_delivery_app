@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/state_util.dart';
-import '../view/dashboard_view.dart';
+import '../view/home_view.dart';
 
-class DashboardController extends State<DashboardView> implements MvcController {
-  static late DashboardController instance;
-  late DashboardView view;
+class HomeController extends State<HomeView> implements MvcController {
+  static late HomeController instance;
+  late HomeView view;
 
   @override
   void initState() {

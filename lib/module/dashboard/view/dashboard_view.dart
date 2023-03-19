@@ -1,16 +1,17 @@
-// ignore_for_file: avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_delivery/shared/theme/theme.dart';
+import 'package:food_delivery/core.dart';
 import 'package:ionicons/ionicons.dart';
+import '../../../shared/theme.dart';
+import '../controller/dashboard_controller.dart';
 
-class DashboardView extends StatelessWidget {
-  const DashboardView({super.key});
+class DashboardView extends StatefulWidget {
+  const DashboardView({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
+  Widget build(context, DashboardController controller) {
+    controller.view = this;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -550,4 +551,7 @@ class DashboardView extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  State<DashboardView> createState() => DashboardController();
 }

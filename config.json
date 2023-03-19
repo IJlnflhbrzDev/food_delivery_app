@@ -1,4 +1,7 @@
 {
     "openai_key": "",
-    "modules": []
+    "modules": [
+        "home",
+        "dashboard"
+    ]
 }
