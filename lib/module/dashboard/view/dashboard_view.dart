@@ -14,57 +14,61 @@ class DashboardView extends StatefulWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        title: Row(
-          children: const [
-            CircleAvatar(
-              backgroundImage: AssetImage(
-                "assets/profile.jpg",
+      appBar: !controller.appBarVisibility
+          ? null
+          : AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0.0,
+              title: Row(
+                children: const [
+                  CircleAvatar(
+                    backgroundImage: AssetImage(
+                      "assets/profile.jpg",
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Icon(
+                    Ionicons.location,
+                    size: 15.0,
+                    color: Colors.black,
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    "IJlal Naufal Hibrizi",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  Icon(
+                    Ionicons.chevron_down,
+                    size: 15,
+                    color: Colors.black,
+                    // color: Colors.black,
+                  )
+                ],
               ),
+              actions: const [
+                Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: Icon(
+                    Ionicons.notifications_outline,
+                    color: Colors.black,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(
+                    Ionicons.bag_handle,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(width: 10),
-            Icon(
-              Ionicons.location,
-              size: 15.0,
-              color: Colors.black,
-            ),
-            SizedBox(width: 5),
-            Text(
-              "IJlal Naufal Hibrizi",
-              style: TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(width: 5),
-            Icon(
-              Ionicons.chevron_down,
-              size: 15,
-              color: Colors.black,
-              // color: Colors.black,
-            )
-          ],
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(4.0),
-            child: Icon(
-              Ionicons.notifications_outline,
-              color: Colors.black,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Ionicons.bag_handle,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
+        controller: controller.scrollController,
         padding: const EdgeInsets.all(0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,13 +194,6 @@ class DashboardView extends StatefulWidget {
                             borderRadius: BorderRadius.all(
                               Radius.circular(18.0),
                             ),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //     color: Color(0x19000000),
-                            //     blurRadius: 24,
-                            //     offset: Offset(0, 11),
-                            //   ),
-                            // ],
                           ),
                           child: Stack(
                             children: [
@@ -405,7 +402,9 @@ class DashboardView extends StatefulWidget {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      children: List.generate(10, (index) {
+                      children:
+                          List.generate(controller.products.length, (index) {
+                        var item = controller.products[index];
                         return Container(
                           width: 160,
                           margin: const EdgeInsets.only(right: 12),
@@ -445,14 +444,15 @@ class DashboardView extends StatefulWidget {
                                 child: Stack(
                                   children: [
                                     Container(
-                                      decoration: const BoxDecoration(
+                                      decoration: BoxDecoration(
                                         image: DecorationImage(
                                           image: NetworkImage(
-                                            "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                                            item['photo'] ??
+                                                "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
                                           ),
                                           fit: BoxFit.cover,
                                         ),
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                           Radius.circular(
                                             16.0,
                                           ),
@@ -477,8 +477,8 @@ class DashboardView extends StatefulWidget {
                                         padding:
                                             const EdgeInsets.only(bottom: 10),
                                         child: const CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                            "https://i.ibb.co/PGv8ZzG/me.jpg",
+                                          backgroundImage: AssetImage(
+                                            "assets/profile.jpg",
                                           ),
                                         ),
                                       ),
