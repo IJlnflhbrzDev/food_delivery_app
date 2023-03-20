@@ -1,7 +1,24 @@
 {
     "openai_key": "",
     "modules": [
-        "home",
-        "dashboard"
+        "welcome",
+        "dashboard",
+        "auth/login",
+
+        "customer/cs_main_navigation",
+        "customer/cs_dashboard",
+        "customer/cs_vendor_detail",
+        "customer/cs_cart",
+        "customer/cs_checkout",
+        "customer/cs_order_list",
+
+        "admin/adm_dashboard",
+        "admin/adm_main_navigation",
+
+        "vendor/vn_main_navigation",
+        "vendor/vn_dashboard",
+
+        "driver/dr_main_navigation",
+        "driver/dr_dashboard"
     ]
 }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/core.dart';
-import '../controller/home_controller.dart';
+import '../controller/login_controller.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
-  Widget build(context, HomeController controller) {
+  Widget build(context, LoginController controller) {
     controller.view = this;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("Login"),
         actions: const [],
       ),
       body: SingleChildScrollView(
@@ -25,5 +25,5 @@ class HomeView extends StatefulWidget {
   }
 
   @override
-  State<HomeView> createState() => HomeController();
+  State<LoginView> createState() => LoginController();
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/state_util.dart';
-import '../view/home_view.dart';
+import '../view/cs_cart_view.dart';
 
-class HomeController extends State<HomeView> implements MvcController {
-  static late HomeController instance;
-  late HomeView view;
+class CsCartController extends State<CsCartView> implements MvcController {
+  static late CsCartController instance;
+  late CsCartView view;
 
   @override
   void initState() {
