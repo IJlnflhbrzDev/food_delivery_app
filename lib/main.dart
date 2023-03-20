@@ -1,7 +1,7 @@
 import 'package:food_delivery/state_util.dart';
 import 'package:flutter/material.dart';
 
-import 'module/dashboard/view/dashboard_view.dart';
+import 'module/customer/cs_dashboard/view/cs_dashboard_view.dart';
 
 // import 'package:food_delivery/shared/theme/theme.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       navigatorKey: Get.navigatorKey,
       // theme: getDefaultTheme(),
-      home: const DashboardView(),
+      home: const CsDashboardView(),
     );
   }
 }

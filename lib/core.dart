@@ -21,7 +21,6 @@ export 'package:food_delivery/module/customer/cs_order_list/controller/cs_order_
 export 'package:food_delivery/module/customer/cs_order_list/view/cs_order_list_view.dart';
 export 'package:food_delivery/module/customer/cs_vendor_detail/controller/cs_vendor_detail_controller.dart';
 export 'package:food_delivery/module/customer/cs_vendor_detail/view/cs_vendor_detail_view.dart';
-export 'package:food_delivery/module/dashboard/controller/dashboard_controller.dart';
 export 'package:food_delivery/module/dashboard/view/dashboard_view.dart';
 export 'package:food_delivery/module/driver/dr_dashboard/controller/dr_dashboard_controller.dart';
 export 'package:food_delivery/module/driver/dr_dashboard/view/dr_dashboard_view.dart';
