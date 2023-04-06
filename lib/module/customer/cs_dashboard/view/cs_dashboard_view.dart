@@ -7,7 +7,9 @@ import 'package:food_delivery/widget/card_product_potraid.dart';
 import 'package:ionicons/ionicons.dart';
 
 class CsDashboardView extends StatefulWidget {
-  const CsDashboardView({Key? key}) : super(key: key);
+  const CsDashboardView({
+    Key? key,
+  }) : super(key: key);
 
   Widget build(context, CsDashboardController controller) {
     controller.view = this;

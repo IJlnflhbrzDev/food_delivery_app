@@ -17,4 +17,8 @@ class LoginController extends State<LoginView> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  doLoginAsCustomer() async {}
+  doLoginAsResto() async {}
+  doLoginAsDriver() async {}
 }
